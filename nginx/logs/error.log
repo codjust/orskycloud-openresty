@@ -84,3 +84,28 @@
 2016/08/10 11:39:04 [notice] 13162#0: signal process started
 2016/08/10 11:39:04 [alert] 9361#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/nginx.conf:39
 2016/08/10 11:39:31 [alert] 13166#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/nginx.conf:39
+2016/10/04 22:46:28 [alert] 24342#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/04 22:46:28 [notice] 24342#0: signal process started
+2016/10/04 22:46:28 [alert] 24342#0: kill(13167, 1) failed (3: No such process)
+2016/10/04 22:48:07 [alert] 24459#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/04 22:48:12 [alert] 24463#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/04 22:48:12 [emerg] 24463#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2016/10/04 22:48:12 [emerg] 24463#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2016/10/04 22:48:12 [emerg] 24463#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2016/10/04 22:48:12 [emerg] 24463#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2016/10/04 22:48:12 [emerg] 24463#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2016/10/04 22:48:12 [emerg] 24463#0: still could not bind()
+2016/10/04 22:48:28 [alert] 24467#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/04 22:48:28 [notice] 24467#0: signal process started
+2016/10/04 22:48:28 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/04 22:55:57 [emerg] 24783#0: getpwnam("spotless") failed in /opt/openresty/nginx/conf/nginx.conf:2
+2016/10/04 22:56:49 [alert] 24827#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/04 22:56:49 [emerg] 24827#0: unknown directive "accless_log" in /opt/openresty/nginx/conf/ngx_private_cloud.conf:9
+2016/10/04 22:57:10 [alert] 24870#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/04 22:57:10 [emerg] 24870#0: unexpected "}" in /opt/openresty/nginx/conf/ngx_private_cloud.conf:20
+2016/10/04 22:57:54 [alert] 24873#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/04 22:57:54 [notice] 24873#0: signal process started
+2016/10/04 22:57:54 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/04 22:58:03 [alert] 24908#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/04 22:58:03 [notice] 24908#0: signal process started
+2016/10/04 22:58:03 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
