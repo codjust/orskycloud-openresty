@@ -109,3 +109,99 @@
 2016/10/04 22:58:03 [alert] 24908#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
 2016/10/04 22:58:03 [notice] 24908#0: signal process started
 2016/10/04 22:58:03 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/06 23:59:12 [alert] 22453#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/06 23:59:12 [emerg] 22453#0: unexpected "}" in /opt/openresty/nginx/conf/ngx_private_cloud.conf:34
+2016/10/06 23:59:30 [alert] 22455#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/06 23:59:30 [notice] 22455#0: signal process started
+2016/10/06 23:59:30 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/07 00:00:27 [error] 22456#0: *438 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:02:26 [error] 22456#0: *439 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:03:11 [error] 22456#0: *440 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:03:49 [error] 22456#0: *441 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json?mid=0&&did=nil HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:03:52 [error] 22456#0: *442 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json?mid=0&&did=nil HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:04:00 [error] 22456#0: *444 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json?mid=0&&did=0 HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:04:17 [error] 22456#0: *446 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json?mid=0&&did=0 HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:04:21 [error] 22456#0: *447 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json?mid=0&&did=0 HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:04:22 [error] 22456#0: *448 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json?mid=0&&did=0 HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:04:27 [error] 22456#0: *449 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:04:44 [error] 22456#0: *450 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json?mid%20=%20nil HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:04:49 [error] 22456#0: *452 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json?mid%20=%20nil HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:06:30 [error] 22456#0: *455 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:06:55 [error] 22456#0: *456 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:07:04 [error] 22456#0: *457 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:07:52 [error] 22456#0: *458 failed to load external Lua file "/opt/openresty/nginx/lua/api/uploadData.lua": /opt/openresty/nginx/lua/api/uploadData.lua:4: 'then' expected near 'andargs', client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:08:00 [error] 22456#0: *459 failed to load external Lua file "/opt/openresty/nginx/lua/api/uploadData.lua": /opt/openresty/nginx/lua/api/uploadData.lua:4: 'then' expected near 'andargs', client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:08:38 [error] 22456#0: *460 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:3: attempt to call field 'get_url_args' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:11:13 [warn] 22456#0: *467 [lua] uploadData.lua:5: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:11:31 [warn] 22456#0: *468 [lua] uploadData.lua:5: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:11:35 [warn] 22456#0: *469 [lua] uploadData.lua:5: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?did=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:11:42 [warn] 22456#0: *470 [lua] uploadData.lua:5: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?did=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:12:06 [warn] 22456#0: *471 [lua] uploadData.lua:5: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?did=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:12:55 [warn] 22456#0: *472 [lua] uploadData.lua:5: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?did=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:13:16 [warn] 22456#0: *473 [lua] uploadData.lua:5: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?did=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:13:35 [warn] 22456#0: *474 [lua] uploadData.lua:5: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:16:00 [warn] 22456#0: *475 [lua] uploadData.lua:5: request args uid is nil or did is nil, client: 223.74.51.22, server: skycloud, request: "GET /api/uploadData.json HTTP/1.1", host: "119.29.33.243"
+2016/10/07 00:17:52 [warn] 22456#0: *478 [lua] uploadData.lua:10: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:18:17 [warn] 22456#0: *479 [lua] uploadData.lua:10: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:18:17 [error] 22456#0: *479 attempt to set status 400 via ngx.exit after sending out the response status 200, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:22:00 [warn] 22456#0: *487 [lua] uploadData.lua:7: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:22:04 [warn] 22456#0: *488 [lua] uploadData.lua:7: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:22:07 [warn] 22456#0: *489 [lua] uploadData.lua:7: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid= HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:22:10 [warn] 22456#0: *490 [lua] uploadData.lua:7: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:30:37 [warn] 22456#0: *495 [lua] uploadData.lua:7: request args uid is nil or did is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:34:05 [alert] 24031#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/07 00:34:05 [notice] 24031#0: signal process started
+2016/10/07 00:34:05 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/07 00:35:19 [warn] 24032#0: *503 [lua] uploadData.lua:15: bad request args uid P:nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=44&did=3 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:36:31 [warn] 24032#0: *506 [lua] uploadData.lua:19: right request args uid :4, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=4 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:36:43 [warn] 24032#0: *507 [lua] uploadData.lua:19: right request args uid :, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid= HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:37:03 [warn] 24032#0: *508 [lua] uploadData.lua:19: right request args uid :true, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid HTTP/1.1", host: "127.0.0.1"
+2016/10/07 00:42:17 [warn] 24032#0: *509 [lua] uploadData.lua:19: right request args uid :, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid= HTTP/1.1", host: "127.0.0.1"
