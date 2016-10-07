@@ -215,3 +215,63 @@ coroutine 0:
 2016/10/07 11:06:17 [warn] 24032#0: *589 [lua] uploadData.lua:21: right request args uid :2, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=2&did=2 HTTP/1.1", host: "127.0.0.1"
 2016/10/07 11:06:28 [warn] 24032#0: *590 [lua] uploadData.lua:21: right request args uid :2, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=2&did=2 HTTP/1.1", host: "127.0.0.1"
 2016/10/07 11:10:39 [warn] 24032#0: *591 [lua] uploadData.lua:21: right request args uid :2, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=2&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 21:08:01 [error] 24032#0: *660 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:1: module 'comm.common' not found:
+	no field package.preload['comm.common']
+	no file '/opt/openresty/nginx//comm/common.lua'
+	no file '/opt/openresty/nginx/comm/common.lua'
+	no file '/opt/openresty/lualib/comm/common.lua'
+	no file '/opt/openresty/lualib/comm/common/init.lua'
+	no file './comm/common.lua'
+	no file '/opt/openresty/luajit/share/luajit-2.1.0-beta2/comm/common.lua'
+	no file '/usr/local/share/lua/5.1/comm/common.lua'
+	no file '/usr/local/share/lua/5.1/comm/common/init.lua'
+	no file '/opt/openresty/luajit/share/lua/5.1/comm/common.lua'
+	no file '/opt/openresty/luajit/share/lua/5.1/comm/common/init.lua'
+	no file '/opt/openresty/lualib/comm/common.so'
+	no file './comm/common.so'
+	no file '/usr/local/lib/lua/5.1/comm/common.so'
+	no file '/opt/openresty/luajit/lib/lua/5.1/comm/common.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+	no file '/opt/openresty/lualib/comm.so'
+	no file './comm.so'
+	no file '/usr/local/lib/lua/5.1/comm.so'
+	no file '/opt/openresty/luajit/lib/lua/5.1/comm.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	/opt/openresty/nginx/lua/api/uploadData.lua:1: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 21:10:38 [alert] 13110#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/07 21:10:38 [notice] 13110#0: signal process started
+2016/10/07 21:10:38 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/07 21:10:48 [error] 13111#0: *661 lua entry thread aborted: runtime error: error loading module 'comm.common' from file '/opt/openresty/nginx/lua/comm/common.lua':
+	/opt/openresty/nginx/lua/comm/common.lua:50: '<eof>' expected near 'end'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	/opt/openresty/nginx/lua/api/uploadData.lua:1: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 21:17:08 [error] 13111#0: *663 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:19: attempt to index local 'commom' (a boolean value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 21:20:23 [error] 13111#0: *664 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:19: attempt to index local 'comm' (a boolean value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 21:29:30 [warn] 13111#0: *665 [lua] uploadData.lua:19: request body is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 21:31:11 [warn] 13111#0: *666 [lua] uploadData.lua:19: request body is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploadData.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 21:31:24 [warn] 13111#0: *667 [lua] uploaddata.lua:19: request body is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 22:09:52 [warn] 13111#0: *670 [lua] uploaddata.lua:19: request body is nil, client: 127.0.0.1, server: skycloud, request: "GET /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 22:10:07 [error] 13111#0: *671 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploaddata.lua:23: attempt to index local 'comm' (a boolean value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploaddata.lua: in function </opt/openresty/nginx/lua/api/uploaddata.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 22:14:10 [error] 13111#0: *672 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploaddata.lua:24: attempt to call field 'json_decode' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploaddata.lua: in function </opt/openresty/nginx/lua/api/uploaddata.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 22:15:51 [warn] 13111#0: *673 [lua] uploaddata.lua:26: error request body,probably is not a table, client: 127.0.0.1, server: skycloud, request: "POST /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 22:16:15 [warn] 13111#0: *674 [lua] uploaddata.lua:26: error request body,probably is not a table, client: 127.0.0.1, server: skycloud, request: "POST /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 22:17:42 [warn] 13111#0: *675 [lua] uploaddata.lua:26: error request body,probably is not a table, client: 127.0.0.1, server: skycloud, request: "POST /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 23:03:54 [warn] 13111#0: *680 [lua] uploaddata.lua:26: error request body,probably is not a table, client: 127.0.0.1, server: skycloud, request: "POST /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/07 23:04:07 [warn] 13111#0: *681 [lua] uploaddata.lua:30: right request args uid :1, client: 127.0.0.1, server: skycloud, request: "POST /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
