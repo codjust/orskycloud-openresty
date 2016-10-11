@@ -28,6 +28,8 @@ local red   = redis:new()
 -- }
 
 
+-- curl -i '127.0.0.1/api/uploadData.json?uid=001&did=001' -d '[{"sensor": "weight","value": 78},{"sensor": "heart","value": 78}]'
+
 local args = ngx.req.get_uri_args()
 
 local uid = args.uid 
@@ -66,7 +68,16 @@ if res == nil then
    ngx.say(comm.json_encode(response))
 end
 
+--处理数据
+for k, _ in pairs(post_args) do
+    post_args[k]["timestamp"] = ngx.localtime()
+end
 
+ngx.say(comm.json_encode(post_args))
 
 ngx.log(ngx.WARN,"right request args uid :",uid)
-ngx.say(body)
+--ngx.say(body)
+
+-- for k, v in pairs(post_args) do
+-- 	ngx.say(comm.json_encode(post_args[k]))
+-- end

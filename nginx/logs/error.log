@@ -278,3 +278,25 @@ coroutine 0:
 2016/10/08 00:32:54 [alert] 21884#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
 2016/10/08 00:32:54 [notice] 21884#0: signal process started
 2016/10/08 00:32:54 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/11 17:44:52 [error] 21885#0: *2168 lua entry thread aborted: runtime error: /opt/openresty/nginx//lua/db_redis/db_base.lua:225: bad argument #2 to 'set_keepalive_mod' (number expected, got nil)
+stack traceback:
+coroutine 0:
+	[C]: in function 'set_keepalive_mod'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:225: in function 'hget'
+	/opt/openresty/nginx/lua/api/uploadData.lua:57: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 17:48:32 [error] 21885#0: *2170 lua entry thread aborted: runtime error: /opt/openresty/nginx//lua/db_redis/db_base.lua:225: bad argument #2 to 'set_keepalive_mod' (number expected, got nil)
+stack traceback:
+coroutine 0:
+	[C]: in function 'set_keepalive_mod'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:225: in function 'hget'
+	/opt/openresty/nginx/lua/api/uploadData.lua:57: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 17:51:38 [warn] 21885#0: *2172 [lua] uploadData.lua:71: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:05:15 [warn] 21885#0: *2179 [lua] uploadData.lua:75: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:06:29 [warn] 21885#0: *2181 [lua] uploadData.lua:75: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:08:43 [warn] 21885#0: *2183 [lua] uploadData.lua:79: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:09:10 [warn] 21885#0: *2185 [lua] uploadData.lua:79: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:09:45 [warn] 21885#0: *2187 [lua] uploadData.lua:79: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:18:12 [warn] 21885#0: *2189 [lua] uploadData.lua:79: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:18:46 [warn] 21885#0: *2191 [lua] uploadData.lua:79: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:19:21 [warn] 21885#0: *2193 [lua] uploadData.lua:79: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:19:49 [warn] 21885#0: *2195 [lua] uploadData.lua:78: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"

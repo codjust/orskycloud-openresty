@@ -102,7 +102,7 @@ end
 
 function _M.set_keepalive_mod( self, redis )
     -- ngx.log(ngx.INFO, "redis:set_keepalive ", self.keepalive_idle, self.keepalive_size)
-    return redis:set_keepalive(self.keepalive_idle, self.keepalive_size) -- put it into the connection pool of size 50, with 10 seconds max idle time
+    return redis:set_keepalive(60000, 1000) -- put it into the connection pool of size 50, with 10 seconds max idle time
 end
 
 
