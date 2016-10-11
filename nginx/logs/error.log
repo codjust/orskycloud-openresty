@@ -300,3 +300,36 @@ coroutine 0:
 2016/10/11 18:18:46 [warn] 21885#0: *2191 [lua] uploadData.lua:79: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
 2016/10/11 18:19:21 [warn] 21885#0: *2193 [lua] uploadData.lua:79: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
 2016/10/11 18:19:49 [warn] 21885#0: *2195 [lua] uploadData.lua:78: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:27:02 [warn] 21885#0: *2197 [lua] uploadData.lua:80: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:33:54 [warn] 21885#0: *2201 [lua] uploadData.lua:74: k:1, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:33:54 [warn] 21885#0: *2201 [lua] uploadData.lua:74: k:2, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:33:54 [warn] 21885#0: *2201 [lua] uploadData.lua:76: length:2, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:33:54 [warn] 21885#0: *2201 [lua] uploadData.lua:81: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:42:37 [warn] 21885#0: *2203 [lua] uploadData.lua:74: k:1, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:42:37 [warn] 21885#0: *2203 [lua] uploadData.lua:74: k:2, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:42:37 [error] 21885#0: *2203 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:80: bad argument #1 to 'insert' (table expected, got nil)
+stack traceback:
+coroutine 0:
+	[C]: in function 'insert'
+	/opt/openresty/nginx/lua/api/uploadData.lua:80: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:42:57 [warn] 21885#0: *2205 [lua] uploadData.lua:74: k:1, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:42:57 [warn] 21885#0: *2205 [lua] uploadData.lua:74: k:2, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:42:57 [warn] 21885#0: *2205 [lua] uploadData.lua:83: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:44:58 [warn] 21885#0: *2207 [lua] uploadData.lua:74: k:1, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:44:58 [warn] 21885#0: *2207 [lua] uploadData.lua:74: k:2, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:44:58 [warn] 21885#0: *2207 [lua] uploadData.lua:85: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:45:57 [warn] 21885#0: *2209 [lua] uploadData.lua:81: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:50:23 [warn] 21885#0: *2212 [lua] uploadData.lua:88: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:52:29 [error] 21885#0: *2214 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:75: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=002 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:53:03 [error] 21885#0: *2216 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:75: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=002 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 18:53:05 [error] 21885#0: *2218 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:75: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=002 HTTP/1.1", host: "127.0.0.1"
+2016/10/11 19:10:50 [warn] 21885#0: *2224 [lua] uploadData.lua:88: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"

@@ -68,15 +68,25 @@ if res == nil then
    ngx.say(comm.json_encode(response))
 end
 
---处理数据
+local data = comm.json_decode(res)
+--处理upload数据
 for k, _ in pairs(post_args) do
     post_args[k]["timestamp"] = ngx.localtime()
+    table.insert(data["data"],post_args[k])
+    ngx.log(ngx.INFO,"deal with upload data")
 end
 
-ngx.say(comm.json_encode(post_args))
+red:hset("uid:"..uid,"did:"..did,comm.json_encode(data))
+
+
+response.Successful = true
+response.Message = "upload success"
+--ngx.log(ngx.WARN,"length:",table.getn(post_args))
+--ngx.say(comm.json_encode(post_args))
+ngx.say(comm.json_encode(data))
 
 ngx.log(ngx.WARN,"right request args uid :",uid)
---ngx.say(body)
+ngx.say(comm.json_encode(response))
 
 -- for k, v in pairs(post_args) do
 -- 	ngx.say(comm.json_encode(post_args[k]))
