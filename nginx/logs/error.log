@@ -275,3 +275,6 @@ coroutine 0:
 2016/10/07 22:17:42 [warn] 13111#0: *675 [lua] uploaddata.lua:26: error request body,probably is not a table, client: 127.0.0.1, server: skycloud, request: "POST /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
 2016/10/07 23:03:54 [warn] 13111#0: *680 [lua] uploaddata.lua:26: error request body,probably is not a table, client: 127.0.0.1, server: skycloud, request: "POST /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
 2016/10/07 23:04:07 [warn] 13111#0: *681 [lua] uploaddata.lua:30: right request args uid :1, client: 127.0.0.1, server: skycloud, request: "POST /api/uploaddata.json?uid=1&did=2 HTTP/1.1", host: "127.0.0.1"
+2016/10/08 00:32:54 [alert] 21884#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/08 00:32:54 [notice] 21884#0: signal process started
+2016/10/08 00:32:54 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
