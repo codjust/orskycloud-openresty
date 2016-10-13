@@ -333,3 +333,424 @@ stack traceback:
 coroutine 0:
 	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=002 HTTP/1.1", host: "127.0.0.1"
 2016/10/11 19:10:50 [warn] 21885#0: *2224 [lua] uploadData.lua:88: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 13:41:02 [alert] 32545#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 13:41:02 [notice] 32545#0: signal process started
+2016/10/13 13:41:02 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 14:03:10 [error] 32546#0: *2537 failed to load external Lua file "/opt/openresty/nginx/test_base_lua/unit/test_mock.lua": /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:38: 'end' expected (to close 'function' at line 1) near '<eof>', client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", host: "127.0.0.1"
+2016/10/13 14:05:30 [error] 32546#0: *2539 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:1: module 'test_case_lua.test_base' not found:
+	no field package.preload['test_case_lua.test_base']
+	no file '/opt/openresty/nginx//test_case_lua/test_base.lua'
+	no file '/opt/openresty/nginx/test_case_lua/test_base.lua'
+	no file '/opt/openresty/nginx/lua/test_case_lua/test_base.lua'
+	no file '/opt/openresty/lualib/test_case_lua/test_base.lua'
+	no file '/opt/openresty/lualib/test_case_lua/test_base/init.lua'
+	no file './test_case_lua/test_base.lua'
+	no file '/opt/openresty/luajit/share/luajit-2.1.0-beta2/test_case_lua/test_base.lua'
+	no file '/usr/local/share/lua/5.1/test_case_lua/test_base.lua'
+	no file '/usr/local/share/lua/5.1/test_case_lua/test_base/init.lua'
+	no file '/opt/openresty/luajit/share/lua/5.1/test_case_lua/test_base.lua'
+	no file '/opt/openresty/luajit/share/lua/5.1/test_case_lua/test_base/init.lua'
+	no file '/opt/openresty/lualib/test_case_lua/test_base.so'
+	no file './test_case_lua/test_base.so'
+	no file '/usr/local/lib/lua/5.1/test_case_lua/test_base.so'
+	no file '/opt/openresty/luajit/lib/lua/5.1/test_case_lua/test_base.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+	no file '/opt/openresty/lualib/test_case_lua.so'
+	no file './test_case_lua.so'
+	no file '/usr/local/lib/lua/5.1/test_case_lua.so'
+	no file '/opt/openresty/luajit/lib/lua/5.1/test_case_lua.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua:1: in function </opt/openresty/nginx/test_base_lua/unit/test_mock.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", host: "127.0.0.1"
+2016/10/13 14:13:15 [alert] 32546#0: *2544 1024 worker_connections are not enough, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:13:15 [error] 32546#0: *2544 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/test.lua:15: hget error 2
+stack traceback:
+coroutine 0:
+	[C]: in function 'error'
+	/opt/openresty/nginx/lua/test.lua:15: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:15:30 [alert] 32546#0: *3566 1024 worker_connections are not enough, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:15:30 [error] 32546#0: *3566 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/test.lua:15: hget error 2
+stack traceback:
+coroutine 0:
+	[C]: in function 'error'
+	/opt/openresty/nginx/lua/test.lua:15: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:15:42 [alert] 1503#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 14:15:42 [notice] 1503#0: signal process started
+2016/10/13 14:15:42 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 14:15:49 [alert] 1504#0: *4588 1024 worker_connections are not enough, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:15:49 [error] 1504#0: *4588 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/test.lua:15: hget error 2
+stack traceback:
+coroutine 0:
+	[C]: in function 'error'
+	/opt/openresty/nginx/lua/test.lua:15: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:16:28 [alert] 1504#0: *5610 1024 worker_connections are not enough, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:18:16 [alert] 1504#0: *6632 1024 worker_connections are not enough, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:18:52 [alert] 1504#0: *7654 1024 worker_connections are not enough, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:20:09 [alert] 1504#0: *8678 1024 worker_connections are not enough, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:20:56 [alert] 1504#0: *9700 1024 worker_connections are not enough, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:21:25 [alert] 1504#0: *10722 1024 worker_connections are not enough, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:21:25 [error] 1504#0: *10722 attempt to set status 503 via ngx.exit after sending out the response status 200, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:22:57 [error] 1504#0: *11744 failed to load external Lua file "/opt/openresty/nginx/test_base_lua/unit/test_mock.lua": /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:30: '=' expected near '+', client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", host: "127.0.0.1"
+2016/10/13 14:24:36 [alert] 1504#0: *11745 1024 worker_connections are not enough, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:33:44 [error] 1504#0: *12773 lua entry thread aborted: runtime error: /opt/openresty/nginx//lua/db_redis/db_base.lua:215: attempt to call local 'fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx//lua/db_redis/db_base.lua: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:6: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:43:48 [error] 1504#0: *12776 lua entry thread aborted: runtime error: /opt/openresty/nginx//lua/db_redis/db_base.lua:215: attempt to call local 'fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx//lua/db_redis/db_base.lua: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:6: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:43:53 [error] 1504#0: *12778 lua entry thread aborted: runtime error: /opt/openresty/nginx//lua/db_redis/db_base.lua:215: attempt to call local 'fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx//lua/db_redis/db_base.lua: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:6: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 14:43:54 [error] 1504#0: *12780 lua entry thread aborted: runtime error: /opt/openresty/nginx//lua/db_redis/db_base.lua:215: attempt to call local 'fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx//lua/db_redis/db_base.lua: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:6: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:10:48 [error] 1504#0: *12802 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:11:38 [error] 1504#0: *12804 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:11:38 [error] 1504#0: *12806 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:11:39 [error] 1504#0: *12808 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:11:52 [error] 1504#0: *12810 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:12:05 [error] 1504#0: *12812 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:13:20 [error] 1504#0: *12814 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mmmm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:14:08 [error] 1504#0: *12816 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:14:10 [error] 1504#0: *12818 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:14:11 [error] 1504#0: *12820 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:17:04 [error] 1504#0: *12827 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:17:05 [error] 1504#0: *12829 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:17:06 [error] 1504#0: *12831 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:19:35 [error] 1504#0: *12833 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:20:07 [error] 1504#0: *12835 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:34:22 [error] 1504#0: *12840 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:35:00 [error] 1504#0: *12842 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:35:05 [error] 1504#0: *12844 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:35:05 [error] 1504#0: *12846 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:35:06 [error] 1504#0: *12848 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 15:35:07 [error] 1504#0: *12850 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:01:35 [error] 1504#0: *12853 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:01:44 [error] 1504#0: *12855 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:01:45 [error] 1504#0: *12857 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:01:45 [error] 1504#0: *12859 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:02:10 [error] 1504#0: *12861 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:03:14 [error] 1504#0: *12863 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:03:16 [error] 1504#0: *12865 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:03:17 [error] 1504#0: *12867 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:03:18 [error] 1504#0: *12869 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:16: attempt to index field 'mm' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:14:22 [error] 1504#0: *12874 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:14:30 [error] 1504#0: *12876 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:14:31 [error] 1504#0: *12878 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:15:52 [error] 1504#0: *12880 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:16:44 [error] 1504#0: *12882 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:17:06 [error] 1504#0: *12884 failed to load external Lua file "/opt/openresty/nginx/test_base_lua/unit/test_mock.lua": /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:34: ')' expected (to close '(' at line 33) near 'if', client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:17:34 [error] 1504#0: *12886 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:18:25 [error] 1504#0: *12888 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:19:01 [error] 1504#0: *12890 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:19:31 [error] 1504#0: *12892 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:19:59 [error] 1504#0: *12894 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:20:25 [error] 1504#0: *12896 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:21:19 [error] 1504#0: *12898 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:21:51 [error] 1504#0: *12900 lua entry thread aborted: runtime error: /opt/openresty/nginx/test_base_lua/unit/test_mock.lua:17: attempt to call local 'org_fun' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/test_base_lua/unit/test_mock.lua: in function 'fun'
+	/opt/openresty/nginx//lua/db_redis/db_base.lua:215: in function 'hget'
+	/opt/openresty/nginx/lua/test.lua:13: in function </opt/openresty/nginx/lua/test.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /test_unit/test_mock.json HTTP/1.1", subrequest: "/test", host: "127.0.0.1"
+2016/10/13 16:27:22 [warn] 1504#0: *12902 [lua] uploadData.lua:88: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:27:28 [warn] 1504#0: *12904 [lua] uploadData.lua:88: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:27:29 [warn] 1504#0: *12906 [lua] uploadData.lua:88: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:27:53 [error] 1504#0: *12908 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:75: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=002 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:28:13 [error] 1504#0: *12910 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:75: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:28:29 [error] 1504#0: *12912 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:75: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:42 [warn] 1504#0: *12914 [lua] uploadData.lua:59: redis hget:, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:42 [error] 1504#0: *12914 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:76: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:47 [warn] 1504#0: *12916 [lua] uploadData.lua:59: redis hget:, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:47 [error] 1504#0: *12916 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:76: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:47 [warn] 1504#0: *12918 [lua] uploadData.lua:59: redis hget:, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:47 [error] 1504#0: *12918 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:76: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:48 [warn] 1504#0: *12920 [lua] uploadData.lua:59: redis hget:, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:48 [error] 1504#0: *12920 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:76: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:49 [warn] 1504#0: *12922 [lua] uploadData.lua:59: redis hget:, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:49 [error] 1504#0: *12922 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:76: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:49 [warn] 1504#0: *12924 [lua] uploadData.lua:59: redis hget:, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:29:50 [error] 1504#0: *12924 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:76: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:30:55 [warn] 1504#0: *12926 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:30:55 [error] 1504#0: *12926 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:77: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:32:09 [warn] 1504#0: *12928 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:32:09 [error] 1504#0: *12928 attempt to set status 400 via ngx.exit after sending out the response status 200, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:32:24 [warn] 1504#0: *12930 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:32:24 [error] 1504#0: *12930 attempt to set status 400 via ngx.exit after sending out the response status 200, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:34:20 [warn] 1504#0: *12932 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:34:20 [error] 1504#0: *12932 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:80: attempt to index local 'data' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:34:39 [warn] 1504#0: *12934 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:34:44 [warn] 1504#0: *12936 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:34:45 [warn] 1504#0: *12938 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:34:45 [warn] 1504#0: *12940 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:34:46 [warn] 1504#0: *12942 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:34:47 [warn] 1504#0: *12944 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:35:32 [warn] 1504#0: *12946 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:35:43 [warn] 1504#0: *12948 [lua] uploadData.lua:66: redis hget:{"createTime":"2016\/912","Sensor":[{"unit":"kg","name":"weight","createTime":"2013\/2\/3","designation":"体重"},{"unit":"次\/分","name":"heart","createTime":"2013\/2\/3","designation":"心率"}],"deviceName":"smartdev","data":[{"timestamp":"2016\/2\/3","sensor":"weight","value":78},{"timestamp":"2016\/4\/3","sensor":"heart","value":78},{"timestamp":"2016-10-11 18:50:23","sensor":"weight","value":78},{"timestamp":"2016-10-11 18:50:23","sensor":"heart","value":78},{"timestamp":"2016-10-11 19:10:50","sensor":"weight","value":78},{"timestamp":"2016-10-11 19:10:50","sensor":"heart","value":78},{"timestamp":"2016-10-13 16:27:22","sensor":"weight","value":78},{"timestamp":"2016-10-13 16:27:22","sensor":"heart","value":78},{"timestamp":"2016-10-13 16:27:28","sensor":"weight","value":78},{"timestamp":"2016-10-13 16:27:28","sensor":"heart","value":78},{"timestamp":"2016-10-13 16:27:29","sensor":"weight","value":78},{"timestamp":"2016-10-13 16:27:29","sensor":"heart","value":78}],"description":"none"}, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:35:43 [warn] 1504#0: *12948 [lua] uploadData.lua:91: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:35:58 [warn] 1504#0: *12950 [lua] uploadData.lua:66: redis hget:nil, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=002&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:45:53 [warn] 1504#0: *12954 [lua] uploadData.lua:66: redis hget:{"data":[{"timestamp":"2016\/2\/3","sensor":"weight","value":78},{"timestamp":"2016\/4\/3","sensor":"heart","value":78},{"timestamp":"2016-10-11 18:50:23","sensor":"weight","value":78},{"timestamp":"2016-10-11 18:50:23","sensor":"heart","value":78},{"timestamp":"2016-10-11 19:10:50","sensor":"weight","value":78},{"timestamp":"2016-10-11 19:10:50","sensor":"heart","value":78},{"timestamp":"2016-10-13 16:27:22","sensor":"weight","value":78},{"timestamp":"2016-10-13 16:27:22","sensor":"heart","value":78},{"timestamp":"2016-10-13 16:27:28","sensor":"weight","value":78},{"timestamp":"2016-10-13 16:27:28","sensor":"heart","value":78},{"timestamp":"2016-10-13 16:27:29","sensor":"weight","value":78},{"timestamp":"2016-10-13 16:27:29","sensor":"heart","value":78},{"timestamp":"2016-10-13 16:35:43","sensor":"weight","value":78},{"timestamp":"2016-10-13 16:35:43","sensor":"heart","value":78}],"createTime":"2016\/912","deviceName":"smartdev","Sensor":[{"name":"weight","createTime":"2013\/2\/3","unit":"kg","designation":"体重"},{"name":"heart","createTime":"2013\/2\/3","unit":"次\/分","designation":"心率"}],"description":"none"}, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 16:45:53 [warn] 1504#0: *12954 [lua] uploadData.lua:91: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 17:18:51 [error] 1504#0: *12958 lua entry thread aborted: runtime error: /opt/openresty/nginx/lua/api/uploadData.lua:74: attempt to call global 'check_data_sersor' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx/lua/api/uploadData.lua: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 17:19:11 [error] 1504#0: *12960 lua entry thread aborted: runtime error: /opt/openresty/nginx//lua/db_redis/db.lua:15: attempt to index global 'db_sersor' (a nil value)
+stack traceback:
+coroutine 0:
+	/opt/openresty/nginx//lua/db_redis/db.lua: in function 'check_data_sersor'
+	/opt/openresty/nginx/lua/api/uploadData.lua:74: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 17:20:19 [warn] 1504#0: *12964 [lua] uploadData.lua:94: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"

@@ -2,6 +2,7 @@
 local comm  = require("lua.comm.common") 
 local redis = require("lua.db_redis.db_base")
 local red   = redis:new()
+local db_h  = require("lua.db_redis.db")
 --上传数据
 -- 解析POST请求，根据请求数据对redis进行操作
 --请求样例：curl -i '127.0.0.1/api/uploadData.json?uid=1&did=3'
@@ -66,9 +67,17 @@ if res == nil then
    response.Successful = false
    response.Message = "device id not exist or user not exist"
    ngx.say(comm.json_encode(response))
+   return
 end
 
 local data = comm.json_decode(res)
+if db_h.check_data_sersor(data,post_args) == false then
+   response.Successful = false
+   response.Message = "post data exist error sensor name"
+   ngx.say(comm.json_encode(response))
+	return 
+end
+
 --处理upload数据
 for k, _ in pairs(post_args) do
     post_args[k]["timestamp"] = ngx.localtime()
@@ -83,7 +92,7 @@ response.Successful = true
 response.Message = "upload success"
 --ngx.log(ngx.WARN,"length:",table.getn(post_args))
 --ngx.say(comm.json_encode(post_args))
-ngx.say(comm.json_encode(data))
+--ngx.say(comm.json_encode(data))
 
 ngx.log(ngx.WARN,"right request args uid :",uid)
 ngx.say(comm.json_encode(response))

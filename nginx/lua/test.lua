@@ -1,7 +1,18 @@
-local myself_module = require "lua.myself_module"
+local redis = require("lua.db_redis.db_base")
+local red   = redis:new()
 
-local args = ngx.req.get_uri_args()
 
-local sum = myself_module.sum(args.a,args.b)
 
-ngx.say(sum)
+local res,err = red:hget("UserId","john")
+if err then
+	ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
+end
+
+
+
+local result,err = red:hget("uid:001","count")
+if err then
+  ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
+end
+
+ngx.say(res,result)
