@@ -87,16 +87,9 @@ end
 
 red:hset("uid:"..uid,"did:"..did,comm.json_encode(data))
 
-
 response.Successful = true
 response.Message = "upload success"
---ngx.log(ngx.WARN,"length:",table.getn(post_args))
---ngx.say(comm.json_encode(post_args))
---ngx.say(comm.json_encode(data))
 
 ngx.log(ngx.WARN,"right request args uid :",uid)
 ngx.say(comm.json_encode(response))
 
--- for k, v in pairs(post_args) do
--- 	ngx.say(comm.json_encode(post_args[k]))
--- end
