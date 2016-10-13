@@ -754,3 +754,21 @@ coroutine 0:
 	/opt/openresty/nginx//lua/db_redis/db.lua: in function 'check_data_sersor'
 	/opt/openresty/nginx/lua/api/uploadData.lua:74: in function </opt/openresty/nginx/lua/api/uploadData.lua:1>, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
 2016/10/13 17:20:19 [warn] 1504#0: *12964 [lua] uploadData.lua:94: right request args uid :001, client: 127.0.0.1, server: skycloud, request: "POST /api/uploadData.json?uid=001&did=001 HTTP/1.1", host: "127.0.0.1"
+2016/10/13 18:33:16 [alert] 12881#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 18:33:16 [emerg] 12881#0: unknown "prefix" variable
+2016/10/13 18:34:01 [alert] 12883#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 18:34:01 [notice] 12883#0: signal process started
+2016/10/13 18:34:01 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 18:34:08 [alert] 12929#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 18:34:08 [notice] 12929#0: signal process started
+2016/10/13 18:34:08 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 18:35:06 [alert] 12979#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 18:35:06 [notice] 12979#0: signal process started
+2016/10/13 18:35:06 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 18:37:07 [warn] 12980#0: *12983 [lua] html.lua:4: html...., client: 127.0.0.1, server: skycloud, request: "GET /html HTTP/1.1", host: "127.0.0.1"
+2016/10/13 18:37:43 [alert] 13070#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 18:37:43 [notice] 13070#0: signal process started
+2016/10/13 18:37:43 [alert] 24460#0: lua_code_cache is off; this will hurt performance in /opt/openresty/nginx/conf/ngx_private_cloud.conf:3
+2016/10/13 18:37:50 [warn] 13071#0: *12984 [lua] html.lua:4: html...., client: 127.0.0.1, server: skycloud, request: "GET /html HTTP/1.1", host: "127.0.0.1"
+2016/10/13 18:38:26 [warn] 13071#0: *12985 [lua] html.lua:4: html...., client: 127.0.0.1, server: skycloud, request: "GET /html HTTP/1.1", host: "127.0.0.1"
+2016/10/13 18:38:28 [warn] 13071#0: *12986 [lua] html.lua:4: html...., client: 127.0.0.1, server: skycloud, request: "GET /html HTTP/1.1", host: "127.0.0.1"
