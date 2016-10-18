@@ -24,3 +24,14 @@ function check_data_sersor(rd_data,post_data)
 
 	return true
 end
+
+
+function select_data(start,end,res_data)
+	local response = []
+
+	for i, data in ipairs(res_data) do
+		if is_time_greater_than(data["timestamp"],start) and is_time_less_than(data["timestamp"],end) then
+			table.insert(response,data)
+		end
+	end
+end
