@@ -1,2 +1,2 @@
 # orskycloud-openresty
-using OR dev a api server.
+using OR develop an api server.
