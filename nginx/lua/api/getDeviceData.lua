@@ -19,9 +19,19 @@ if not args.uid or not args.did then
 	ngx.exit(ngx.HTTP_BAD_REQUEST)
 end
 
+local response = {}
+response.Successful = true
+response.Message    = "success"
+
 local StartTime = args.StartTime or "2015-09-01 00:00:00"
 local EndTime   = args.EndTime   or ngx.localtime()
 
+if (StartTime and #StartTime ~= 19) or (EndTime and #EndTime ~= 19) then
+	response.Successful = false
+	response.Message    = "Error time format"
+	ngx.say(common.json_encode(response))
+	return
+end
 
 local res,err = red:hget("uid:"..args.uid,"did:"..args.did)
 if err then
@@ -31,4 +41,5 @@ local res_data = (common.json_decode(res))["data"]
 
 res_data = db_handle.select_data(StartTime,EndTime,res_data)
 
-ngx.say(common.json_encode(res_data))
+table.insert(response,res_data)
+ngx.say(common.json_encode(response))
