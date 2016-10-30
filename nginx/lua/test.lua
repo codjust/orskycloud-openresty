@@ -9,7 +9,6 @@ if err then
 end
 
 
-
 local result,err = red:hget("uid:001","count")
 if err then
   ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)

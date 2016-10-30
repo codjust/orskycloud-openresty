@@ -48,3 +48,10 @@ function check_args(args, require_key)
 
     return true
 end
+
+-- function check_time_format(src,time)
+--   if not src or type(src) ~= "string" then
+--     return false
+
+
+-- end

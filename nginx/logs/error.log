@@ -832,3 +832,17 @@ coroutine 0:
 2016/10/13 19:13:20 [warn] 14665#0: *13016 [lua] html.lua:8: html...., client: 127.0.0.1, server: skycloud, request: "GET /html HTTP/1.1", host: "127.0.0.1"
 2016/10/13 19:13:20 [error] 14665#0: *13016 open() "/opt/openresty/nginx/htmllua/template/html/view.html" failed (2: No such file or directory), client: 127.0.0.1, server: skycloud, request: "GET /html HTTP/1.1", subrequest: "lua/template/html/view.html", host: "127.0.0.1"
 2016/10/13 19:13:20 [warn] 14665#0: *13016 [lua] html.lua:14: html....end, client: 127.0.0.1, server: skycloud, request: "GET /html HTTP/1.1", host: "127.0.0.1"
+2016/10/22 23:46:11 [alert] 6006#0: lua_code_cache is off; this will hurt performance in ./conf/ngx_private_cloud.conf:4
+2016/10/30 09:36:24 [alert] 14667#0: lua_code_cache is off; this will hurt performance in ./conf/ngx_private_cloud.conf:4
+2016/10/30 16:28:21 [alert] 12439#0: lua_code_cache is off; this will hurt performance in /home/hcw/WorkDir/orskycloud-openresty/nginx/conf/ngx_private_cloud.conf:4
+2016/10/30 16:31:54 [alert] 15596#0: lua_code_cache is off; this will hurt performance in ./conf/ngx_private_cloud.conf:4
+2016/10/30 16:31:54 [notice] 15596#0: signal process started
+2016/10/30 16:31:54 [alert] 12466#0: lua_code_cache is off; this will hurt performance in /home/hcw/WorkDir/orskycloud-openresty/nginx/conf/ngx_private_cloud.conf:4
+2016/10/30 16:34:45 [error] 15607#0: *5 lua entry thread aborted: runtime error: error loading module 'lua.comm.common' from file '/home/hcw/WorkDir/orskycloud-openresty/nginx//lua/comm/common.lua':
+	.../WorkDir/orskycloud-openresty/nginx//lua/comm/common.lua:59: 'end' expected (to close 'function' at line 52) near '<eof>'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	...kDir/orskycloud-openresty/nginx/lua/tools/storeredis.lua:2: in function <...kDir/orskycloud-openresty/nginx/lua/tools/storeredis.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /tools/storeredis.json HTTP/1.1", host: "127.0.0.1"
+2016/10/30 16:37:59 [error] 15607#0: *7 [lua] storeredis.lua:24: file open error, client: 127.0.0.1, server: skycloud, request: "GET /tools/storeredis.json HTTP/1.1", host: "127.0.0.1"
+2016/10/30 16:38:36 [warn] 15607#0: *8 [lua] storeredis.lua:18: data:"{\n\"createTime\": \"2016-9-12 00:00:00\",\n\"Sensor\": [\n{\n\"unit\": \"kg\",\n\"name\": \"weight\",\n\"createTime\": \"2016-9-12 00:00:00\",\n\"designation\": \"体重\"\n},\n{\n\"unit\": \"次\/分\",\n\"name\": \"heart\",\n\"createTime\": \"2016-9-12 00:00:00\",\n\"designation\": \"心率\"\n},\n{\n\"unit\": \"C\",\n\"name\": \"temperature\",\n\"createTime\":\"2016-9-12 00:00:00\",\n\"designation\": \"体温\"\n},\n{\n\"unit\": \"mmHg\",\n\"name\": \"systolic pressure\",\n\"createTime\":\"2016-9-12 00:00:00\",\n\"designation\": \"收缩压\"\n},\n{\n\"unit\": \"mmHg\",\n\"name\": \"diastolic pressure\",\n\"createTime\":\"2016-9-12 00:00:00\",\n\"designation\": \"舒张压\"\n}\n],\n\"deviceName\": \"smartdev\",\n\"data\": [\n{\n\"timestamp\": \"2016-10-20 14:50:30\",\n\"sensor\": \"weight\",\n\"value\": 78\n},\n{\n\"timestamp\": \"2016-10-20 14:50:30\",\n\"sensor\": \"heart\",\n\"value\": 78\n},\n{\n\"timestamp\": \"2016-10-20 14:51:09\",\n\"sensor\": \"weight\",\n\"value\": 54\n},\n{\n\"timestamp\": \"2016-10-20 14:51:09\",\n\"sensor\": \"heart\",\n\"value\": 211\n}\n],\n\"description\": \"none\"\n}", client: 127.0.0.1, server: skycloud, request: "GET /tools/storeredis.json HTTP/1.1", host: "127.0.0.1"
