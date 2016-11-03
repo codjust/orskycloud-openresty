@@ -846,3 +846,90 @@ coroutine 0:
 	...kDir/orskycloud-openresty/nginx/lua/tools/storeredis.lua:2: in function <...kDir/orskycloud-openresty/nginx/lua/tools/storeredis.lua:1>, client: 127.0.0.1, server: skycloud, request: "GET /tools/storeredis.json HTTP/1.1", host: "127.0.0.1"
 2016/10/30 16:37:59 [error] 15607#0: *7 [lua] storeredis.lua:24: file open error, client: 127.0.0.1, server: skycloud, request: "GET /tools/storeredis.json HTTP/1.1", host: "127.0.0.1"
 2016/10/30 16:38:36 [warn] 15607#0: *8 [lua] storeredis.lua:18: data:"{\n\"createTime\": \"2016-9-12 00:00:00\",\n\"Sensor\": [\n{\n\"unit\": \"kg\",\n\"name\": \"weight\",\n\"createTime\": \"2016-9-12 00:00:00\",\n\"designation\": \"体重\"\n},\n{\n\"unit\": \"次\/分\",\n\"name\": \"heart\",\n\"createTime\": \"2016-9-12 00:00:00\",\n\"designation\": \"心率\"\n},\n{\n\"unit\": \"C\",\n\"name\": \"temperature\",\n\"createTime\":\"2016-9-12 00:00:00\",\n\"designation\": \"体温\"\n},\n{\n\"unit\": \"mmHg\",\n\"name\": \"systolic pressure\",\n\"createTime\":\"2016-9-12 00:00:00\",\n\"designation\": \"收缩压\"\n},\n{\n\"unit\": \"mmHg\",\n\"name\": \"diastolic pressure\",\n\"createTime\":\"2016-9-12 00:00:00\",\n\"designation\": \"舒张压\"\n}\n],\n\"deviceName\": \"smartdev\",\n\"data\": [\n{\n\"timestamp\": \"2016-10-20 14:50:30\",\n\"sensor\": \"weight\",\n\"value\": 78\n},\n{\n\"timestamp\": \"2016-10-20 14:50:30\",\n\"sensor\": \"heart\",\n\"value\": 78\n},\n{\n\"timestamp\": \"2016-10-20 14:51:09\",\n\"sensor\": \"weight\",\n\"value\": 54\n},\n{\n\"timestamp\": \"2016-10-20 14:51:09\",\n\"sensor\": \"heart\",\n\"value\": 211\n}\n],\n\"description\": \"none\"\n}", client: 127.0.0.1, server: skycloud, request: "GET /tools/storeredis.json HTTP/1.1", host: "127.0.0.1"
+2016/10/31 15:18:15 [alert] 4634#0: lua_code_cache is off; this will hurt performance in ./conf/ngx_private_cloud.conf:4
+2016/10/31 15:18:15 [emerg] 4634#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2016/10/31 15:18:15 [emerg] 4634#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2016/10/31 15:18:15 [emerg] 4634#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2016/10/31 15:18:15 [emerg] 4634#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2016/10/31 15:18:15 [emerg] 4634#0: bind() to 0.0.0.0:80 failed (98: Address already in use)
+2016/10/31 15:18:44 [alert] 4844#0: lua_code_cache is off; this will hurt performance in ./conf/ngx_private_cloud.conf:4
+2016/10/31 21:24:03 [alert] 22394#0: lua_code_cache is off; this will hurt performance in ./conf/ngx_private_cloud.conf:4
+2016/10/31 23:59:13 [alert] 22395#0: worker process 22398 exited on signal 9
+2016/10/31 23:59:29 [alert] 22395#0: worker process 29682 exited on signal 9
+2016/11/01 00:34:06 [error] 29690#0: *24 failed to initialize Lua VM, client: 101.226.125.100, server: skycloud, request: "GET /stats HTTP/1.1", host: "119.29.33.243"
+2016/11/01 00:34:06 [error] 29690#0: *25 failed to initialize Lua VM, client: 180.153.206.18, server: skycloud, request: "GET /invoker/JMXInvokerServlet HTTP/1.1", host: "119.29.33.243"
+2016/11/01 00:41:12 [alert] 22395#0: worker process 29690 exited on signal 9
+2016/11/01 00:41:14 [alert] 22395#0: worker process 1400 exited on signal 9
+2016/11/01 00:59:09 [alert] 22395#0: worker process 1401 exited on signal 9
+2016/11/01 00:59:20 [alert] 22395#0: worker process 6269 exited on signal 9
+2016/11/01 01:01:14 [alert] 22395#0: worker process 6303 exited on signal 9
+2016/11/01 01:01:18 [alert] 22395#0: worker process 6489 exited on signal 9
+2016/11/01 01:25:07 [alert] 22395#0: worker process 6492 exited on signal 9
+2016/11/01 01:29:49 [error] 7497#0: *30 connect() failed (111: Connection refused), client: 185.25.148.240, server: skycloud, request: "GET http://testp1.piwo.pila.pl/testproxy.php HTTP/1.1", host: "testp1.piwo.pila.pl"
+2016/11/01 01:38:07 [alert] 22395#0: worker process 7497 exited on signal 9
+2016/11/01 01:38:10 [alert] 22395#0: worker process 8384 exited on signal 9
+2016/11/01 01:39:04 [alert] 22395#0: worker process 8385 exited on signal 9
+2016/11/01 01:39:07 [alert] 22395#0: worker process 8744 exited on signal 9
+2016/11/01 01:40:05 [alert] 22395#0: worker process 8751 exited on signal 9
+2016/11/01 01:40:11 [alert] 22395#0: worker process 8890 exited on signal 9
+2016/11/01 01:40:13 [alert] 22395#0: worker process 8907 exited on signal 9
+2016/11/01 01:48:07 [alert] 22395#0: worker process 8908 exited on signal 9
+2016/11/01 01:48:22 [alert] 22395#0: worker process 10792 exited on signal 9
+2016/11/01 01:49:06 [alert] 22395#0: worker process 10829 exited on signal 9
+2016/11/01 01:49:11 [alert] 22395#0: worker process 10889 exited on signal 9
+2016/11/01 01:50:17 [alert] 22395#0: worker process 10904 exited on signal 9
+2016/11/01 01:50:52 [alert] 22395#0: worker process 10935 exited on signal 9
+2016/11/01 01:51:12 [alert] 22395#0: worker process 11113 exited on signal 9
+2016/11/01 01:52:40 [alert] 22395#0: worker process 11151 exited on signal 9
+2016/11/01 01:52:48 [alert] 22395#0: worker process 11192 exited on signal 9
+2016/11/01 01:52:51 [alert] 22395#0: worker process 11249 exited on signal 9
+2016/11/01 01:53:49 [alert] 22395#0: worker process 11270 exited on signal 9
+2016/11/01 01:53:53 [alert] 22395#0: worker process 11466 exited on signal 9
+2016/11/01 01:54:00 [alert] 22395#0: worker process 11478 exited on signal 9
+2016/11/01 01:55:13 [alert] 22395#0: worker process 11479 exited on signal 9
+2016/11/01 01:55:16 [alert] 22395#0: worker process 11546 exited on signal 9
+2016/11/01 01:57:11 [alert] 22395#0: worker process 11547 exited on signal 9
+2016/11/01 01:58:22 [alert] 22395#0: worker process 11670 exited on signal 9
+2016/11/01 01:58:22 [alert] 22395#0: fork() failed while spawning "worker process" (12: Cannot allocate memory)
+2016/11/01 01:58:22 [alert] 22395#0: could not respawn worker process
+2016/11/01 20:36:26 [alert] 5514#0: lua_code_cache is off; this will hurt performance in ./conf/ngx_private_cloud.conf:4
+2016/11/01 23:25:11 [alert] 5515#0: worker process 5517 exited on signal 9
+2016/11/01 23:54:56 [alert] 5515#0: worker process 24639 exited on signal 9
+2016/11/01 23:55:02 [alert] 5515#0: worker process 26478 exited on signal 9
+2016/11/01 23:55:33 [alert] 5515#0: worker process 26484 exited on signal 9
+2016/11/01 23:55:35 [alert] 5515#0: worker process 26545 exited on signal 9
+2016/11/02 00:02:31 [alert] 5515#0: worker process 26548 exited on signal 9
+2016/11/02 00:03:12 [alert] 5515#0: worker process 27106 exited on signal 9
+2016/11/02 00:06:20 [alert] 5515#0: worker process 27204 exited on signal 9
+2016/11/02 00:07:10 [alert] 5515#0: worker process 27589 exited on signal 9
+2016/11/02 00:07:22 [alert] 5515#0: worker process 27697 exited on signal 9
+2016/11/02 00:10:36 [alert] 5515#0: worker process 27701 exited on signal 9
+2016/11/02 00:11:16 [alert] 5515#0: worker process 27927 exited on signal 9
+2016/11/02 00:12:26 [alert] 5515#0: worker process 27984 exited on signal 9
+2016/11/02 00:19:20 [alert] 5515#0: worker process 28040 exited on signal 9
+2016/11/02 00:19:33 [alert] 5515#0: worker process 28506 exited on signal 9
+2016/11/02 00:19:43 [alert] 5515#0: worker process 28516 exited on signal 9
+2016/11/02 00:19:56 [alert] 5515#0: worker process 28529 exited on signal 9
+2016/11/02 00:20:06 [alert] 5515#0: worker process 28561 exited on signal 9
+2016/11/02 00:20:08 [alert] 5515#0: worker process 28584 exited on signal 9
+2016/11/02 00:20:15 [alert] 5515#0: worker process 28585 exited on signal 9
+2016/11/02 00:20:22 [alert] 5515#0: worker process 28586 exited on signal 9
+2016/11/02 00:20:24 [alert] 5515#0: worker process 28595 exited on signal 9
+2016/11/02 00:20:26 [alert] 5515#0: worker process 28596 exited on signal 9
+2016/11/02 00:22:05 [alert] 5515#0: worker process 28597 exited on signal 9
+2016/11/02 00:23:07 [alert] 5515#0: worker process 28816 exited on signal 9
+2016/11/02 00:24:07 [alert] 5515#0: worker process 28986 exited on signal 9
+2016/11/02 00:24:21 [alert] 5515#0: worker process 29062 exited on signal 9
+2016/11/02 00:24:26 [alert] 5515#0: worker process 29063 exited on signal 9
+2016/11/02 00:24:32 [alert] 5515#0: worker process 29074 exited on signal 9
+2016/11/02 00:24:35 [alert] 5515#0: worker process 29088 exited on signal 9
+2016/11/02 00:24:41 [alert] 5515#0: worker process 29089 exited on signal 9
+2016/11/02 00:24:44 [alert] 5515#0: worker process 29093 exited on signal 9
+2016/11/02 00:26:07 [alert] 5515#0: worker process 29102 exited on signal 9
+2016/11/02 00:26:11 [alert] 5515#0: worker process 29209 exited on signal 9
+2016/11/02 00:32:30 [alert] 5515#0: worker process 29210 exited on signal 9
+2016/11/02 00:34:17 [alert] 5515#0: worker process 29606 exited on signal 9
+2016/11/02 00:34:23 [alert] 5515#0: worker process 29731 exited on signal 9
+2016/11/02 00:34:26 [alert] 5515#0: worker process 29733 exited on signal 9
+2016/11/02 00:34:26 [alert] 5515#0: fork() failed while spawning "worker process" (12: Cannot allocate memory)
+2016/11/02 00:34:26 [alert] 5515#0: could not respawn worker process

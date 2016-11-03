@@ -17,3 +17,15 @@ $4
 name
 $4
 john
+*2
+$6
+SELECT
+$1
+0
+*3
+$3
+set
+$3
+aaa
+$4
+bbbb
