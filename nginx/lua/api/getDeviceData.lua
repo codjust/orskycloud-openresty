@@ -26,17 +26,31 @@ response.Message    = "success"
 local StartTime = args.StartTime or "2015-09-01 00:00:00"
 local EndTime   = args.EndTime   or ngx.localtime()
 
-if (StartTime and #StartTime ~= 19) or (EndTime and #EndTime ~= 19) then
+
+--2015-09-01 時間格式要求嚴格
+--2015-09-01 00:00:00 \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}
+StartTime = ngx.re.match(StartTime, [[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}]])
+EndTime   = ngx.re.match(EndTime, [[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}]])
+
+if not StartTime or not EndTime then
 	response.Successful = false
 	response.Message    = "Error time format"
 	ngx.say(common.json_encode(response))
 	return
 end
 
-local res,err = red:hget("uid:"..args.uid,"did:"..args.did)
+local res, err = red:hget("uid:".. args.uid,"did:" .. args.did)
 if err then
 	ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
 end
+
+if not res then
+	response.Successful = false
+	response.Message    = "uid error or did error or not exist"
+	ngx.say(common.json_encode(response))
+	return
+end
+
 local res_data = (common.json_decode(res))["data"]
 
 res_data = db_handle.select_data(StartTime,EndTime,res_data)

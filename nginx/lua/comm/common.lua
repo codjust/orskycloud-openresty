@@ -1,6 +1,6 @@
 module("lua.comm.common", package.seeall)
 --基础函数
-local json   = require(require("ffi").os=="Windows" and "resty.dkjson" or "cjson")
+local json = require(require("ffi").os=="Windows" and "resty.dkjson" or "cjson")
 
 
 --解析json，封装cjson，加入pcall异常处理
@@ -49,9 +49,31 @@ function check_args(args, require_key)
     return true
 end
 
--- function check_time_format(src,time)
---   if not src or type(src) ~= "string" then
---     return false
 
+function split(str, pat)
+   local t = {}
+   if str == '' or str == nil then
+       return t
+   end
 
--- end
+   local fpat = "(.-)" .. pat
+   local last_end = 1
+   local s, e, cap = str:find(fpat, 1)
+   while s do
+      if s ~= 1 or cap ~= "" then
+         --print(cap)
+         table.insert(t,cap)
+      end
+      last_end = e+1
+      s, e, cap = str:find(fpat, last_end)
+   end
+   if last_end <= #str then
+      cap = str:sub(last_end)
+      table.insert(t, cap)
+   end
+   return t
+end
+
+function trim(str)
+  return str:match "^%s*(.-)%s*$"
+end
