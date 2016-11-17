@@ -1,8 +1,6 @@
 local common = require "lua.comm.common"
 local redis  = require "lua.db_redis.db_base"
 local red    = redis:new()
-
-
 -- 添加新设备，格式
 -- curl '127.0.0.1/api/addnewdevice.json?uid=001' -d '{"deviceName":"newDevice","description":"a test device"}'
 -- 新建设备初始化数据样本：
@@ -13,12 +11,11 @@ local red    = redis:new()
 --     "Sensor":[
 --     ],
 --     "data":[
-
 --     ]
 -- }
-ngx.req.read_body()
 local args = ngx.req.get_uri_args()
 local uid  = args.uid
+ngx.req.read_body()
 local post_args = ngx.req.get_body_data()
 if not uid or not post_args then
 	ngx.log(ngx.ERR,"uid is nil")
@@ -66,20 +63,19 @@ end
 
 local dev_table = post_data
 dev_table["createTime"] = ngx.localtime()
-dev_table["Sensor"]     = {{}}
-dev_table["data"]     = {{}}
+dev_table["Sensor"]     = {}
+dev_table["data"]       = {}
 
 -- redis 事务
-red:multi()
+--red:multi()
 local did = red:hincrby("uid:" .. uid, "nextDeviceId", 1)
 red:hset("uid:" .. uid, "did:" .. ngx.md5(did), common.json_encode(dev_table))
 red:hincrby("uid:" .. uid, "count", 1)
-red:exec()
-
+--red:exec()
 local device = red:hget("uid:" .. uid, "device")
 device = device .. ngx.md5(did) .. "#"
 red:hset("uid:" .. uid, "device", device)
 
 response.Successful = true
 response.Message    = "Add device success"
-ngx.say(common.json_decode(response))
+ngx.say(common.json_encode(response))
