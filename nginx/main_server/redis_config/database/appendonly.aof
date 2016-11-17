@@ -390,3 +390,17 @@ $6
 device
 $107
 001#002#9df29ce7ca629ff1d47bca1149d9faae#9df29ce7ca629ff1d47bca1149d9faae#9df29ce7ca629ff1d47bca1149d9faae#
+*2
+$6
+SELECT
+$1
+0
+*4
+$4
+hset
+$7
+uid:001
+$7
+did:002
+$158
+{"Sensor":[{"unit":"kg","name":"newsensor","designation":"test"}],"data":[],"deviceName":"testDevice","createTime":"2016-11-14 00:00:00","description":"none"}

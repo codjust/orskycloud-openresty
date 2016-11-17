@@ -2,6 +2,7 @@
 
 -- curl '127.0.0.1/api/getalldevicesensor.json?uid=001'
 local common = require "lua.comm.common"
+local logic_func = require "lua.comm.logic_func"
 local redis  = require("lua.db_redis.db_base")
 local red    = redis:new()
 
@@ -16,7 +17,13 @@ local response = {}
 response.Successful = true
 response.Message    = "success"
 
-local device_list, err = red:hget("uid:" .. uid, "device")
+local device_list, err = common.get_data_with_cache(
+								{
+									key="cdn_cache_device",
+									exp_time_succ=60*30,
+								 	exp_time_fail=3
+								 },
+								logic_func._red_hget_, "uid:" .. uid, "device")
 if err then
 	ngx.log(ngx.ERR, "redis hget error")
 	ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
