@@ -50,6 +50,20 @@ function check_args(args, require_key)
 end
 
 
+function check_body_table(args, require_key)
+  if not args or type(args) ~= "table" then
+    return false
+  end
+
+  for k, _ in ipairs(require_key) do
+    if args[k] == nil then
+      return false
+    end
+  end
+  return true
+end
+
+
 function split(str, pat)
    local t = {}
    if str == '' or str == nil then
@@ -73,6 +87,7 @@ function split(str, pat)
    end
    return t
 end
+
 
 function trim(str)
   return str:match "^%s*(.-)%s*$"

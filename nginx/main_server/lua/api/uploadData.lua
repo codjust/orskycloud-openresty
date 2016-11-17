@@ -1,5 +1,5 @@
 
-local comm  = require("lua.comm.common") 
+local comm  = require("lua.comm.common")
 local redis = require("lua.db_redis.db_base")
 local red   = redis:new()
 local db_h  = require("lua.db_redis.db")
@@ -13,7 +13,7 @@ local db_h  = require("lua.db_redis.db")
 --   [
 --         {
 --             "sensor": "weight",
---             "value": 78    
+--             "value": 78
 --         },
 --         {
 --             "sensor": "heart",
@@ -33,7 +33,7 @@ local db_h  = require("lua.db_redis.db")
 
 local args = ngx.req.get_uri_args()
 
-local uid = args.uid 
+local uid = args.uid
 local did = args.did
 
 --uid 参数的合法性校验在access阶段处理，接口不另外解决
@@ -50,7 +50,7 @@ if body == nil then
 end
 
 local post_args = comm.json_decode(body)
-if  comm.check_args(post_args,{}) == false then
+if comm.check_args(post_args,{}) == false then
 	ngx.log(ngx.WARN,"error request body,probably is not a table")
 	ngx.exit(ngx.HTTP_BAD_REQUEST)
 end
@@ -75,7 +75,7 @@ if db_h.check_data_sersor(data,post_args) == false then
    response.Successful = false
    response.Message = "post data exist error sensor name"
    ngx.say(comm.json_encode(response))
-	return 
+	return
 end
 
 --处理upload数据
