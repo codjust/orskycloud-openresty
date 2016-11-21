@@ -9,6 +9,6 @@ ngx.log(ngx.WARN,"html....")
 -- local view = template.new "view.html"
 -- view.message = "Hello, World!"
 -- view:render()
-template.render("view.html", {message = "world"})
+template.render("login.html")
 
 ngx.log(ngx.WARN,"html....end")
