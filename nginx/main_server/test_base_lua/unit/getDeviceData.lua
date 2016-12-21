@@ -96,4 +96,57 @@ function tb:test_003_normal_return_data_select_time_02()
 	end
 end
 
+
+function tb:test_004_abnormal_error_time_format()
+	local res, err = ngx.location.capture(self.uri .. self.uid .. "&did=" .. self.did .. "&StartTime=2015-10-2014:50:30",
+		{method = ngx.HTTP_POST})
+
+	assert(res.status == 200)
+
+	local data = common.json_decode(res.body)
+	local ret_msg     = data["Message"]
+	local ret_success = data["Successful"]
+	if ret_msg ~= "Error time format" or ret_success ~= false then
+		tb:log("ret_msg:", ret_msg)
+		tb:log("ret_success:", ret_success)
+		error("ret_msg or ret_success failed.")
+	end
+end
+
+
+
+function tb:test_005_abnormal_error_time_format()
+	local res, err = ngx.location.capture(self.uri .. self.uid .. "&did=" .. self.did .. "&StartTime=2015-10-20 14:50:30&EndTime=2016-11-22 14:50:2",
+		{method = ngx.HTTP_POST})
+
+	assert(res.status == 200)
+
+	local data = common.json_decode(res.body)
+	local ret_msg     = data["Message"]
+	local ret_success = data["Successful"]
+	if ret_msg ~= "Error time format" or ret_success ~= false then
+		tb:log("ret_msg:", ret_msg)
+		tb:log("ret_success:", ret_success)
+		error("ret_msg or ret_success failed.")
+	end
+end
+
+
+function tb:test_006_abnormal_error_uid()
+	local res, err = ngx.location.capture(self.uri .. "111112242424" .. "&did=" .. self.did .. "&StartTime=2015-10-20 14:50:30&EndTime=2016-11-22 14:50:29",
+		{method = ngx.HTTP_POST})
+
+	assert(res.status == 200)
+
+	local data = common.json_decode(res.body)
+	local ret_msg     = data["Message"]
+	local ret_success = data["Successful"]
+	if ret_msg ~= "uid error or did error or not exist" or ret_success ~= false then
+		tb:log("ret_msg:", ret_msg)
+		tb:log("ret_success:", ret_success)
+		error("ret_msg or ret_success failed.")
+	end
+end
+
+
 tb:run()
