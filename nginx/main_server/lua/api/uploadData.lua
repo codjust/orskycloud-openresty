@@ -85,11 +85,15 @@ for k, _ in pairs(post_args) do
     ngx.log(ngx.INFO,"deal with upload data")
 end
 
-red:hset("uid:"..uid,"did:"..did,comm.json_encode(data))
-
-response.Successful = true
-response.Message = "upload success"
-
+local res, err = red:hset("uid:"..uid,"did:"..did,comm.json_encode(data))
+if err then
+  ngx.log(ngx.ERR, "redis hset failed.")
+  ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
+end
+if res == 1 or res == 0 then
+  response.Successful = true
+  response.Message = "upload success"
+end
 ngx.log(ngx.WARN,"right request args uid :",uid)
 ngx.say(comm.json_encode(response))
 
