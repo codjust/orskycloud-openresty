@@ -58,6 +58,7 @@ function tb:test_003_abnormal_bad_request()
 	assert(res.status == 400)
 end
 
+
 function tb:test_004_abnormal_redis_hget_error()
 	local function red_hget(red_self, uid, did)
 		if uid == "uid:" .. self.uid and did == "did:" .. self.did then
