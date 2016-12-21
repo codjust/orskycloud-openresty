@@ -149,4 +149,40 @@ function tb:test_006_abnormal_error_uid()
 end
 
 
+function tb:test_007_abnormal_bad_request()
+	local res, err = ngx.location.capture(self.uri .. "111112242424",
+		{method = ngx.HTTP_POST})
+
+	assert(res.status == 400)
+end
+
+
+-- 使用mock
+function tb:test_008_abnormal_redis_error()
+
+	local function red_hget(red_self, uid, did)
+		if uid == "uid:" .. self.uid and did == "did:" .. self.did then
+			return nil, "redis hget error"
+		else
+			local org_funs = self.mock_funs[red_hget]
+			return org_funs(red_self, uid, did)
+		end
+	end
+
+	local mock_rules = {
+		{redis_c, "hget", red_hget}
+	}
+
+	local function _test_run()
+		local res, err = ngx.location.capture(self.uri .. self.uid .. "&did=" .. self.did .. "&StartTime=2015-10-20 14:50:30",
+			{method = ngx.HTTP_POST})
+		if res.status ~= 503 then
+			error("error return code:" .. res.status)
+		end
+		assert(res.status == ngx.HTTP_SERVICE_UNAVAILABLE)
+	end
+
+	self:mock_run(mock_rules, _test_run)
+end
+
 tb:run()
