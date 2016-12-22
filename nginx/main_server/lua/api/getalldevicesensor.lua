@@ -16,6 +16,27 @@ local response = {}
 response.Successful = true
 response.Message    = "success"
 
+local uid_list, err = red:get("UserList")
+if err then
+	ngx.log(ngx.ERR, "redis get failed.")
+	ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
+end
+local tb_uid = common.split(uid_list, "#")
+local id_t
+for _, id in pairs(tb_uid) do
+	if id == uid then
+		id_t = id
+		break
+	end
+end
+if id_t ~= uid then
+	ngx.log(ngx.ERR, "error uid or uid not exist.", id_t)
+	response.Successful = true
+	response.Message    = "error uid or uid not exist."
+	ngx.say(common.json_encode(response))
+	return
+end
+
 local device_list, err = red:hget("uid:" .. uid, "device")
 if err then
 	ngx.log(ngx.ERR, "redis hget error")
