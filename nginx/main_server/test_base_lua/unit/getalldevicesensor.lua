@@ -14,8 +14,10 @@ function tb:init()
 	self.data1 = { deviceName = "Test1", description = "description1", createTime = "2016-12-19 23:07:12", Sensor = {{unit = "kg", name = "weight", createTime = "2016-9-12 00:00:00", designation =  "体重"}}, data={{}}}
 	self.data2 = { deviceName = "Test2", description = "description2", createTime = "2015-12-19 23:07:12", Sensor = {{unit = "kg", name = "high", createTime = "2016-9-12 00:00:00", designation =  "身高"}}, data={}}
 
-	self.device = self.did1 .. "#" .. self.did2
+	self.device   = self.did1 .. "#" .. self.did2
+	self.userlist = self.uid .. "#"
 	-- init redis data
+	red:set("UserList", self.userlist)
 	red:hset("uid:" .. self.uid, "device", self.device)
 	red:hset("uid:" .. self.uid, "did:" .. self.did1, common.json_encode(self.data1))
 	red:hset("uid:" .. self.uid, "did:" .. self.did2, common.json_encode(self.data2))
@@ -23,6 +25,7 @@ end
 
 
 function tb:destroy()
+	red:del("UserList", self.userlist)
 	red:hdel("uid:" .. self.uid, "device")
 	red:hdel("uid:" .. self.uid, "did:" .. self.did1)
 	red:hdel("uid:" .. self.uid, "did:" .. self.did2)
