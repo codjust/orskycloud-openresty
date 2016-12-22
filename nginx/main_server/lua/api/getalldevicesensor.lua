@@ -29,14 +29,16 @@ if not device_list then
 end
 
 local dev_list = common.split(device_list, "#")
+ngx.log(ngx.ERR, "device list:", common.json_encode(dev_list))
 local ret_info = {}
 for _, v in ipairs(dev_list) do
-	local dev_temp, err = red:hget("uid:" .. uid, "did:" .. v)
+	local dev_t, err = red:hget("uid:" .. uid, "did:" .. v)
 	if err then
 		ngx.log(ngx.ERR, "redis hget error")
 		ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
 	end
-	local dev_temp = common.json_decode(dev_temp)
+	ngx.log(ngx.ERR, "device:", dev_t)
+	local dev_temp = common.json_decode(dev_t)
 	dev_temp["data"] = nil
 	table.insert(ret_info, dev_temp)
 end
