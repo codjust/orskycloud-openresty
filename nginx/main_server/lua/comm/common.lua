@@ -1,7 +1,7 @@
 module("lua.comm.common", package.seeall)
 --基础函数
 local json = require(require("ffi").os=="Windows" and "resty.dkjson" or "cjson")
-
+local lock   = require "resty.lock"
 
 --解析json，封装cjson，加入pcall异常处理
 function json_decode(str)
@@ -112,4 +112,56 @@ function is_table_equal(t1, t2, ignore_mt)
     end
     return true
 
+end
+
+
+function get_data_with_cache( opts, fun, ... )
+  local ngx_dict_name = "cache_ngx"
+  -- get from cache
+  local cache_ngx = ngx.shared[ngx_dict_name]
+  local values = cache_ngx:get(opts.key)
+  if values then
+    values = json_decode(values)
+    return values.res, values.err
+  end
+
+  -- cache miss!
+  local lock = lock:new(ngx_dict_name, opts.lock)
+  local elapsed, err = lock:lock("lock_" .. opts.key)
+  if not elapsed then
+    return nil, "get data with cache lock fail err: " .. err
+  end
+
+  -- someone might have already put the value into the cache
+  -- so we check it here again:
+  values = cache_ngx:get(opts.key)
+  if values then
+    lock:unlock()
+
+    values = json_decode(values)
+    return values.res, values.err
+  end
+
+  -- get data
+  local exp_time = opts.exp_time or 0 -- default 0s mean forever
+  local res, err = fun(...)
+  if err then
+    -- use the old cache at first
+    values = cache_ngx:get_stale(opts.key)
+    if values then
+      values = json_decode(values)
+      res, err = values.res, values.err
+    end
+
+    exp_time = opts.exp_time_fail or exp_time
+  else
+    exp_time = opts.exp_time_succ or exp_time
+  end
+
+  --  update the shm cache with the newly fetched value
+  if tonumber(exp_time) >= 0 then
+    cache_ngx:set(opts.key, json_encode({res=res, err=err}), exp_time)
+  end
+  lock:unlock()
+  return res, err
 end

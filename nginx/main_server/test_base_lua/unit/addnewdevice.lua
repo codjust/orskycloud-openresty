@@ -158,7 +158,7 @@ function  tb:test_005_abnormal_not_exist_uid()
 end
 
 
-function  tb:test_006_abnormal_redis_exec_failed()
+function tb:test_006_abnormal_redis_exec_failed()
 	local function red_exec()
 		return nil
 	end
@@ -183,6 +183,16 @@ function  tb:test_006_abnormal_redis_exec_failed()
 	end
 
 	self:mock_run(mock_rules, _test_run)
+end
+
+
+function tb:test_007_abnormal_body_is_nil()
+	local res, err = ngx.location.capture(self.uri .. self.uid,
+		{method = ngx.HTTP_POST})
+
+	if res.status ~= 400 then
+		error("error return code:" .. res.status)
+	end
 end
 
 tb:run()
