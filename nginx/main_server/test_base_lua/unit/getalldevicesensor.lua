@@ -49,4 +49,19 @@ function tb:test_001_normal_get_all_info()
 	end
 end
 
+
+function tb:test_002_abnormal_not_exist_uid()
+	local res, err = ngx.location.capture(self.uri .. string.rep('2', 32),
+		{method = ngx.HTTP_POST})
+	assert(res.status == 200)
+	local data = common.json_decode(res.body)
+	local ret_msg     = data["Message"]
+	local ret_success = data["Successful"]
+	if ret_msg ~= "error uid or uid not exist." or ret_success ~= false then
+		tb:log("ret_msg:", ret_msg)
+		tb:log("ret_success:", ret_success)
+		error("error msg and successful return.")
+	end
+end
+
 tb:run()
