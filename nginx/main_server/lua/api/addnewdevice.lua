@@ -58,7 +58,7 @@ end
 if uid ~= t_id then
 	response.Successful = false
 	response.Message    = "userid error，maybe not sign up yet"
-	ngx.say(common.json_decode(response))
+	ngx.say(common.json_encode(response))
 	return
 end
 
@@ -85,7 +85,7 @@ if res == nil then
 	ngx.log(ngx.ERR, "redis multi failed.")
 	response.Successful = false
 	response.Message    = "add new device failed."
-	ngx.say(common.json_decode(response))
+	ngx.say(common.json_encode(response))
 	return
 end
 
