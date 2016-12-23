@@ -140,4 +140,49 @@ function tb:test_004_abnormal_userlist_is_null()
 	end
 end
 
+
+function  tb:test_005_abnormal_not_exist_uid()
+	local res, err = ngx.location.capture(self.uri .. string.rep('1', 32),
+		{method = ngx.HTTP_POST, body = common.json_encode(self.data)})
+	if res.status ~= 200 then
+		error("failed return code:" .. res.status)
+	end
+	local data = common.json_decode(res.body)
+	local ret_msg     = data["Message"]
+	local ret_success = data["Successful"]
+	if ret_msg ~= "userid error，maybe not sign up yet" or ret_success ~= false then
+		tb:log("ret_msg:", ret_msg)
+		tb:log("ret_success:", ret_success)
+		error("error msg and successful return.")
+	end
+end
+
+
+function  tb:test_006_abnormal_redis_exec_failed()
+	local function red_exec()
+		return nil
+	end
+	local mock_rules = {
+		{redis_c, "exec", red_exec}
+	}
+
+	local function _test_run()
+		local res, err = ngx.location.capture(self.uri .. self.uid,
+			{method = ngx.HTTP_POST, body = common.json_encode(self.data)})
+		if res.status ~= 200 then
+			error("failed return code:" .. res.status)
+		end
+		local data = common.json_decode(res.body)
+		local ret_msg     = data["Message"]
+		local ret_success = data["Successful"]
+		if ret_msg ~= "add new device failed." or ret_success ~= false then
+			tb:log("ret_msg:", ret_msg)
+			tb:log("ret_success:", ret_success)
+			error("error msg and successful return.")
+		end
+	end
+
+	self:mock_run(mock_rules, _test_run)
+end
+
 tb:run()
