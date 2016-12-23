@@ -117,7 +117,27 @@ function tb:test_003_abnormal_bad_request()
 	if res.status ~= 400 then
 		error("error return code:" .. res.status)
 	end
-	assert(res.status == 400)
+end
+
+
+function tb:test_004_abnormal_userlist_is_null()
+	red:del("UserList")
+	local res, err = ngx.location.capture(self.uri .. self.uid,
+		{method = ngx.HTTP_POST, body = common.json_encode(self.data)})
+
+	if res.status ~= 200 then
+		error("failed return code:" .. res.status)
+	end
+
+	--tb:log(res.body)
+	local data = common.json_decode(res.body)
+	local ret_msg     = data["Message"]
+	local ret_success = data["Successful"]
+	if ret_msg ~= "userlist is null,not user sign up yet" or ret_success ~= false then
+		tb:log("ret_msg:", ret_msg)
+		tb:log("ret_success:", ret_success)
+		error("error msg and successful return.")
+	end
 end
 
 tb:run()
