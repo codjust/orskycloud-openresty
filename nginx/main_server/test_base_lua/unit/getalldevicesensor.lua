@@ -64,4 +64,41 @@ function tb:test_002_abnormal_not_exist_uid()
 	end
 end
 
+
+function tb:test_003_abnormal_redis_get_failed()
+	local function red_get(red_self, key)
+		if key == "UserList" then
+			return nil, "redis get error"
+		else
+			local org_funs = self.mock_funs[red_get]
+			return org_funs(red_self, key)
+		end
+	end
+	local mock_rules = {
+		{redis_c, "get", red_get}
+	}
+	local function _test_run()
+		local res, err = ngx.location.capture(self.uri .. self.uid,
+			{method = ngx.HTTP_POST})
+		assert(res.status == ngx.HTTP_SERVICE_UNAVAILABLE)
+	end
+	self:mock_run(mock_rules, _test_run)
+end
+
+
+
+function tb:test_004_abnormal_not_exist_device()
+	red:hdel("uid:" .. self.uid, "device")
+	local res, err = ngx.location.capture(self.uri .. self.uid,
+		{method = ngx.HTTP_POST})
+	assert(res.status == 200)
+	local data = common.json_decode(res.body)
+	local ret_msg     = data["Message"]
+	local ret_success = data["Successful"]
+	if ret_msg ~= "Device not create yet" or ret_success ~= false then
+		tb:log("ret_msg:", ret_msg)
+		tb:log("ret_success:", ret_success)
+		error("error msg and successful return.")
+	end
+end
 tb:run()
