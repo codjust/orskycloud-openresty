@@ -39,10 +39,11 @@ if err then
 end
 
 local userlist = common.split(res, "#")
-if not userlist then
+if next(userlist) == nil then
+	ngx.log(ngx.ERR, "userlist is nil.")
 	response.Successful = false
 	response.Message    = "userlist is null,not user sign up yet"
-	ngx.say(common.json_decode(response))
+	ngx.say(common.json_encode(response))
 	return
 end
 
