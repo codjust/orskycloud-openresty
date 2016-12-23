@@ -2,7 +2,7 @@
 
 -- curl '127.0.0.1/api/getalldevicesensor.json?uid=001'
 local common = require "lua.comm.common"
-local redis  = require("lua.db_redis.db_base")
+local redis  = require "lua.db_redis.db_base"
 local red    = redis:new()
 
 local args = ngx.req.get_uri_args()
@@ -50,7 +50,6 @@ if not device_list then
 end
 
 local dev_list = common.split(device_list, "#")
-ngx.log(ngx.ERR, "device list:", common.json_encode(dev_list))
 local ret_info = {}
 for _, v in ipairs(dev_list) do
 	local dev_t, err = red:hget("uid:" .. uid, "did:" .. v)
@@ -58,7 +57,6 @@ for _, v in ipairs(dev_list) do
 		ngx.log(ngx.ERR, "redis hget error")
 		ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
 	end
-	ngx.log(ngx.ERR, "device:", dev_t)
 	local dev_temp = common.json_decode(dev_t)
 	dev_temp["data"] = nil
 	table.insert(ret_info, dev_temp)
