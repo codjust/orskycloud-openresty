@@ -44,9 +44,11 @@ if err then
 end
 
 if not device_list then
+	ngx.log(ngx.ERR, "Device list is nil")
 	response.Successful = false
 	response.Message    = "Device not create yet"
 	ngx.say(common.json_encode(response))
+	return
 end
 
 local dev_list = common.split(device_list, "#")
