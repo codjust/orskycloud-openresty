@@ -55,7 +55,7 @@ function check_body_table(args, require_key)
     return false
   end
 
-  for k, _ in ipairs(require_key) do
+  for k, _ in pairs(require_key) do
     if args[k] == nil then
       return false
     end
