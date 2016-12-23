@@ -31,7 +31,7 @@ for _, id in pairs(tb_uid) do
 end
 if id_t ~= uid then
 	ngx.log(ngx.ERR, "error uid or uid not exist.", id_t)
-	response.Successful = true
+	response.Successful = false
 	response.Message    = "error uid or uid not exist."
 	ngx.say(common.json_encode(response))
 	return
