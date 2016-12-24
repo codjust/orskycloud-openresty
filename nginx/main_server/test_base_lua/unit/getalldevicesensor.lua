@@ -25,6 +25,10 @@ end
 
 
 function tb:destroy()
+	local ngx_dict_name = "cache_ngx"
+  -- get from cache
+  	local cache_ngx = ngx.shared[ngx_dict_name]
+  	cache_ngx:flush_all()
 	red:del("UserList", self.userlist)
 	red:hdel("uid:" .. self.uid, "device")
 	red:hdel("uid:" .. self.uid, "did:" .. self.did1)
