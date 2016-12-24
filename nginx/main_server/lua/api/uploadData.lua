@@ -51,15 +51,15 @@ end
 
 local post_args = comm.json_decode(body)
 if comm.check_args(post_args,{}) == false then
-	ngx.log(ngx.WARN,"error request body,probably is not a table")
+	ngx.log(ngx.WARN, "error request body,probably is not a table")
 	ngx.exit(ngx.HTTP_BAD_REQUEST)
 end
 
 local response = {}
 
-local res,err = red:hget("uid:"..uid,"did:"..did)
+local res, err = red:hget("uid:" .. uid, "did:" .. did)
 if err then
-	ngx.log(ngx.WARN,"redis hget uid:"..uid.."error")
+	ngx.log(ngx.WARN, "redis hget uid:"..uid.."error")
 	ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
 end
 
@@ -81,15 +81,19 @@ end
 --处理upload数据
 for k, _ in pairs(post_args) do
     post_args[k]["timestamp"] = ngx.localtime()
-    table.insert(data["data"],post_args[k])
-    ngx.log(ngx.INFO,"deal with upload data")
+    table.insert(data["data"], post_args[k])
+    ngx.log(ngx.INFO, "deal with upload data")
 end
 
-red:hset("uid:"..uid,"did:"..did,comm.json_encode(data))
-
-response.Successful = true
-response.Message = "upload success"
-
-ngx.log(ngx.WARN,"right request args uid :",uid)
+local res, err = red:hset("uid:"..uid,"did:"..did,comm.json_encode(data))
+if err then
+  ngx.log(ngx.ERR, "redis hset failed.")
+  ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
+end
+if res == 1 or res == 0 then
+  response.Successful = true
+  response.Message = "upload success"
+end
+ngx.log(ngx.WARN, "right request args uid :", uid)
 ngx.say(comm.json_encode(response))
 

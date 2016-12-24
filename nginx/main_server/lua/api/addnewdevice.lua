@@ -39,10 +39,11 @@ if err then
 end
 
 local userlist = common.split(res, "#")
-if not userlist then
+if next(userlist) == nil then
+	ngx.log(ngx.ERR, "userlist is nil.")
 	response.Successful = false
 	response.Message    = "userlist is null,not user sign up yet"
-	ngx.say(common.json_decode(response))
+	ngx.say(common.json_encode(response))
 	return
 end
 
@@ -57,7 +58,7 @@ end
 if uid ~= t_id then
 	response.Successful = false
 	response.Message    = "userid error，maybe not sign up yet"
-	ngx.say(common.json_decode(response))
+	ngx.say(common.json_encode(response))
 	return
 end
 
@@ -66,16 +67,28 @@ dev_table["createTime"] = ngx.localtime()
 dev_table["Sensor"]     = {}
 dev_table["data"]       = {}
 
--- redis 事务
---red:multi()
 local did = red:hincrby("uid:" .. uid, "nextDeviceId", 1)
+local device = red:hget("uid:" .. uid, "device")
+if device == nil then
+	device = ngx.md5(did)
+else
+	device = device .. "#" .. ngx.md5(did)
+end
+
+-- redis 事务
+red:multi()
 red:hset("uid:" .. uid, "did:" .. ngx.md5(did), common.json_encode(dev_table))
 red:hincrby("uid:" .. uid, "count", 1)
---red:exec()
-local device = red:hget("uid:" .. uid, "device")
-device = device .. ngx.md5(did) .. "#"
 red:hset("uid:" .. uid, "device", device)
+local res = red:exec()
+if res == nil then
+	ngx.log(ngx.ERR, "redis multi failed.")
+	response.Successful = false
+	response.Message    = "add new device failed."
+	ngx.say(common.json_encode(response))
+	return
+end
 
 response.Successful = true
-response.Message    = "Add device success"
+response.Message    = "add device success"
 ngx.say(common.json_encode(response))

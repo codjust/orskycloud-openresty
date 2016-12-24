@@ -31,29 +31,41 @@ end
 function is_timestamp_compare(src_time,next_time)
 	-- 这里默认时间格式都为  "2016-10-20 14:51:09"的形式，前面加格式检查
 	local src_temp  = common.split(src_time,' ')
-	ngx.log(ngx.ERR,"split time:",common.json_encode(src_temp),src_temp[1])
 	local src_date  = src_temp[1]
 	local src_time  = src_temp[2]
 
-	local next_temp = common.split(next_time, " ")
+	local next_temp = common.split(next_time, ' ')
 	local next_date = next_temp[1]
 	local next_time = next_temp[2]
 
 	src_temp  = common.split(src_date, "-")
 	next_temp = common.split(next_date, "-")
-	ngx.log(ngx.ERR,"time:",src_date,common.json_encode(src_temp))
+
+	-- 实现lua的continue
 	for i = 1, 3 do
-		if src_temp[i] > next_temp[i] then
-			return true
-		end
+		repeat
+			if src_temp[i] > next_temp[i] then
+				return true
+			elseif src_temp[i] == next_temp[i] then
+				break
+			else
+				return false
+			end
+		until true
 	end
 
 	src_temp  = common.split(src_time, ":")
 	next_temp = common.split(next_time,":")
 	for i = 1, 3 do
-		if src_temp[i] > next_temp[i] then
-			return true
-		end
+		repeat
+			if src_temp[i] > next_temp[i] then
+				return true
+			elseif src_temp[i] == next_temp[i] then
+				break
+			else
+				return false
+			end
+		until true
 	end
 
 	return false
@@ -63,8 +75,10 @@ end
 function select_data(starttime,endtime,res_data)
 	local response = {}
 	for _, data in ipairs(res_data) do
-		if is_timestamp_compare(data["timestamp"],starttime[0]) and is_timestamp_compare(endtime[0],data["timestamp"]) then
-			table.insert(response,data)
+		local first  = is_timestamp_compare(data["timestamp"], starttime[0])
+		local second = is_timestamp_compare(data["timestamp"], endtime[0])
+		if first and not second then
+			table.insert(response, data)
 		end
 	end
 	return response

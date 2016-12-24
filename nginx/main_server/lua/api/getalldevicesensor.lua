@@ -2,8 +2,10 @@
 
 -- curl '127.0.0.1/api/getalldevicesensor.json?uid=001'
 local common = require "lua.comm.common"
+
 local logic_func = require "lua.comm.logic_func"
-local redis  = require("lua.db_redis.db_base")
+local redis  = require "lua.db_redis.db_base"
+
 local red    = redis:new()
 
 local args = ngx.req.get_uri_args()
@@ -16,6 +18,27 @@ end
 local response = {}
 response.Successful = true
 response.Message    = "success"
+
+local uid_list, err = red:get("UserList")
+if err then
+	ngx.log(ngx.ERR, "redis get failed.")
+	ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
+end
+local tb_uid = common.split(uid_list, "#")
+local id_t
+for _, id in pairs(tb_uid) do
+	if id == uid then
+		id_t = id
+		break
+	end
+end
+if id_t ~= uid then
+	ngx.log(ngx.ERR, "error uid or uid not exist.", id_t)
+	response.Successful = false
+	response.Message    = "error uid or uid not exist."
+	ngx.say(common.json_encode(response))
+	return
+end
 
 local device_list, err = common.get_data_with_cache(
 								{
@@ -30,9 +53,11 @@ if err then
 end
 
 if not device_list then
+	ngx.log(ngx.ERR, "Device list is nil")
 	response.Successful = false
 	response.Message    = "Device not create yet"
 	ngx.say(common.json_encode(response))
+	return
 end
 
 local dev_list = common.split(device_list, "#")
@@ -50,7 +75,7 @@ for _, v in ipairs(dev_list) do
 		ngx.log(ngx.ERR, "redis hget error")
 		ngx.exit(ngx.HTTP_SERVICE_UNAVAILABLE)
 	end
-	local dev_temp = common.json_decode(dev_temp)
+	local dev_temp = common.json_decode(dev_t)
 	dev_temp["data"] = nil
 	table.insert(ret_info, dev_temp)
 end

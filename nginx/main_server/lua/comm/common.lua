@@ -55,7 +55,7 @@ function check_body_table(args, require_key)
     return false
   end
 
-  for k, _ in ipairs(require_key) do
+  for k, _ in pairs(require_key) do
     if args[k] == nil then
       return false
     end
@@ -94,15 +94,29 @@ function trim(str)
 end
 
 
--- {
---   key="...",           cache key
---   exp_time=0,          default expire time
---   exp_time_fail=3,     success expire time
---   exp_time_succ=60*30, failed  expire time
---   lock={...}           lock opsts(resty.lock)
--- }
+function is_table_equal(t1, t2, ignore_mt)
+    local ty1 = type(t1)
+    local ty2 = type(t2)
+    if ty1 ~= ty2 then return false end
+
+    if ty1 ~= "table" and ty2 ~= "table" then return t1 == t2 end
+    local mt = getmetatable(t1)
+    if not ignore_mt and mt and mt.__eq then return t1 == t2 end
+    for k1, v1 in pairs(t1) do
+        local v2 = t2[k1]
+        if v2 == nil or not is_table_equal(v1,v2) then return false end
+    end
+    for k2, v2 in pairs(t2) do
+        local v1 = t1[k2]
+        if v1 == nil or not is_table_equal(v1, v2) then return false end
+    end
+    return true
+
+end
+
+
 function get_data_with_cache( opts, fun, ... )
-  local ngx_dict_name = "ngx_cache"
+  local ngx_dict_name = "cache_ngx"
   -- get from cache
   local cache_ngx = ngx.shared[ngx_dict_name]
   local values = cache_ngx:get(opts.key)
