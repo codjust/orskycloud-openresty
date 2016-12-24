@@ -64,7 +64,7 @@ local dev_list = common.split(device_list, "#")
 local ret_info = {}
 for _, v in ipairs(dev_list) do
 	--local dev_temp, err = red:hget("uid:" .. uid, "did:" .. v)
-	local dev_temp, err = common.get_data_with_cache(
+	local dev_t, err = common.get_data_with_cache(
 								{
 									key="cdn_cache_dev_temp",
 									exp_time_succ=60*30,
