@@ -3,4 +3,6 @@ Contents
 ========
 Description
 =======
-using OR develop an api server.
+Using OpenResty implement a simple api server.
+
+
